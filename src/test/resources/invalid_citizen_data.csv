@@ -1,0 +1,24 @@
+name;postalCode;dateOfBirth;email;ssn;errorMessage;nameOfTestCase
+;3778;2002-05-25;johndoe@mail.com;123456788;Value cannot be null or empty!;Test when name is null
+    ;3778;2002-05-25;johndoe@mail.com;123456788;Value cannot be null or empty!;Test when name is empty
+John Doe;;2002-05-25;johndoe@mail.com;123456788;Value cannot be null or empty!;Test when postal code is null
+John Doe;    ;2002-05-25;johndoe@mail.com;123456788;Value cannot be null or empty!;Test when postal code is empty
+John Doe;3378;;johndoe@mail.com;123456788;Value cannot be null or empty!;Test when date of birth is null
+John Doe;3378;   ;johndoe@mail.com;123456788;Value cannot be null or empty!;Test when date of birth is empty
+John Doe;3378;2002.05.25;johndoe@mail.com;123456788;Date format is invalid: 2002.05.25;Test when date of birth format is invalid
+John Doe;3378;2012-05-15;johndoe@mail.com;123456788;2012-05-15 is invalid date of birth. Citizen must be older than 10 years, and must be younger than 120 years!;Test when citizen is too young
+John Doe;3378;2022-05-15;johndoe@mail.com;123456788;2022-05-15 is invalid date of birth. Citizen must be older than 10 years, and must be younger than 120 years!;Test when citizen has not born
+John Doe;3378;1902-05-13;johndoe@mail.com;123456788;1902-05-13 is invalid date of birth. Citizen must be older than 10 years, and must be younger than 120 years!;Test when citizen is too old
+John Doe;3378;2002-05-25;;123456788;Value cannot be null or empty!;Test when email is null
+John Doe;3378;2002-05-25;   ;123456788;Value cannot be null or empty!;Test when email is empty
+John Doe;3378;2002-05-25;a.cd;123456788;Email: 'a.cd' is too short.;Test when email is too short
+John Doe;3378;2002-05-25;a.bcd;123456788;Invalid email: 'a.bcd'. It must contain @. It must be at least in the second character of the string!;Test email without @
+John Doe;3378;2002-05-25;@a.bc;123456788;Invalid email: '@a.bc'. It must contain @. It must be at least in the second character of the string!;Test email with @ at first index of email string
+John Doe;3378;2002-05-25;a@bcd;123456788;Invalid email: 'a@bcd'. It must contain a dot. The last dot must be after a substring following @!;Test email without dot
+John Doe;3378;2002-05-25;a@.bcd;123456788;Invalid email: 'a@.bcd'. It must contain a dot. The last dot must be after a substring following @!;Test email with dot immediately after @
+John Doe;3378;2002-05-25;johndoe@mail.com;;Value cannot be null or empty!;Test when social security number is null
+John Doe;3378;2002-05-25;johndoe@mail.com;    ;Value cannot be null or empty!;Test when social security number is empty
+John Doe;3378;2002-05-25;johndoe@mail.com;1234567890;Social security number must be exactly 9 characters long!;Test when social security number is too long
+John Doe;3378;2002-05-25;johndoe@mail.com;12345678;Social security number must be exactly 9 characters long!;Test when social security number is too short
+John Doe;3378;2002-05-25;johndoe@mail.com;123456789;123456789's CDV code check failed!;Test when CDV code check fails
+
